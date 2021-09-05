@@ -37,6 +37,9 @@ body {
   max-width: 42em;
 }
 
+.circular--square {
+  border-radius: 50%;
+}
 
 /*
  * Header
