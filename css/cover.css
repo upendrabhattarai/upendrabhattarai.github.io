@@ -12,11 +12,12 @@ a:hover {
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+.btn-secondary:active:focus:visited {
+  color: #6d9eeb !important;
+  text-shadow: none !important; /* Prevent inheritance from `body` */
+  box-shadow: none !important;
+  background-color: rgb(240, 242, 245) !important;
+  border: .2rem solid rgba(109, 158, 235, 0.25) !important;
 }
 
 
@@ -108,5 +109,5 @@ body {
  * Footer
  */
 .mastfoot {
-  color: rgba(255, 255, 255, .5);
+  color: rgba(67, 67, 67, 0.5);
 }
