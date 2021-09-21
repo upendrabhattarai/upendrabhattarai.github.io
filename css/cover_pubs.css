@@ -29,7 +29,10 @@ html,
 body {
   height: 100%;
   background-color: #008080;
+  
 }
+
+body { overflow-x:hidden;  }
 
 body {
   display: -ms-flexbox;
