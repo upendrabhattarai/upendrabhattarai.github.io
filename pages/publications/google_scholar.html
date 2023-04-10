@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Publications</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Publications</h1>
+	</header>
+	<main>
+		<section id="publications"></section>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var authorId = "<D58O8q8AAAAJ>"; // Replace with your own Google Scholar author ID
+			
+			$.ajax({
+				url: "https://scholar.google.com/citations?user=" + authorId + "&hl=en&cstart=0&pagesize=100",
+				success: function(data) {
+					var html = "";
+					$(data).find("#gsc_a_b .gsc_a_tr").each(function() {
+						var title = $(this).find(".gsc_a_at").text().trim();
+						var authors = $(this).find(".gsc_a_at+ .gs_gray").text().trim();
+						var journal = $(this).find(".gsc_a_at+ .gs_gray+ .gs_gray").text().trim();
+						var year = $(this).find(".gsc_a_y").text().trim();
+						var link = $(this).find(".gsc_a_at").attr("href");
+						
+						html += "<article>";
+						html += "<h2><a href='https://scholar.google.com" + link + "' target='_blank'>" + title + "</a></h2>";
+						html += "<p>" + authors + "</p>";
+						html += "<p>" + journal + ", " + year + "</p>";
+						html += "</article>";
+					});
+					
+					$("#publications").html(html);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
