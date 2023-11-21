@@ -27,7 +27,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/img/Publication_2022.1.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/img/Publication_2022.1.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2022</abbr>
   </div>
 
@@ -46,7 +46,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/publication_2022.2.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/publication_2022.2.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2022</abbr>
   </div>
 
@@ -65,7 +65,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/publication.2021.2.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/publication.2021.2.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2022</abbr>
   </div>
 
@@ -84,7 +84,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/publication.2021.1.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/publication.2021.1.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2021</abbr>
   </div>
 
@@ -103,7 +103,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/2021-publication.3.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/2021-publication.3.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2021</abbr>
   </div>
 
@@ -123,7 +123,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/2021-publication.4.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/2021-publication.4.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2021</abbr>
   </div>
 
@@ -143,7 +143,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/2018-publication2.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/2018-publication2.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2018</abbr>
   </div>
 
@@ -163,7 +163,7 @@
 <div class="pub-row">
 
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="assets/files/publications/2018-publication.png" class="teaser img-fluid z-depth-1">
+    <img src="../../assets/files/publications/2018-publication.png" class="teaser img-fluid z-depth-1">
     <abbr class="badge">2018</abbr>
   </div>
 
