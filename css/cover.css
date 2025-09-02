@@ -159,18 +159,21 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   margin-bottom: 2rem;
+  width: 200px;  /* same as image */
+  height: 200px; /* same as image */
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary-color);
   box-shadow: var(--shadow-light);
   transition: all 0.3s ease;
   display: block;
-  background-color: var(--card-bg);
+  z-index: 2; /* on top of the border background */
+  position: relative;
 }
 
 .profile-image:hover {
@@ -189,6 +192,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gradient-primary);
   background-clip: padding-box;
   animation: borderRotate 4s linear infinite;
+  z-index: 1; /* behind the image */
 }
 
 @keyframes borderRotate {
