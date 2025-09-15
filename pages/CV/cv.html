@@ -9,16 +9,19 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #00d4aa;
-            --secondary-color: #0099cc;
-            --accent-color: #ff6b6b;
-            --dark-bg: #0a0e17;
-            --darker-bg: #050709;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --primary-color: #00ff88;
+            --secondary-color: #ff6b35;
+            --accent-color: #4ecdc4;
+            --dna-blue: #1e90ff;
+            --rna-red: #ff4757;
+            --protein-green: #2ed573;
+            --dark-bg: #0a0e1a;
+            --darker-bg: #05070f;
+            --card-bg: rgba(0, 255, 136, 0.05);
             --text-primary: #ffffff;
-            --text-secondary: #b0b8c1;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --gradient-primary: linear-gradient(135deg, #00d4aa 0%, #0099cc 100%);
+            --text-secondary: #a0a8b0;
+            --border-color: rgba(0, 255, 136, 0.2);
+            --gradient-primary: linear-gradient(135deg, #00ff88 0%, #4ecdc4 50%, #1e90ff 100%);
         }
 
         body {
@@ -29,10 +32,11 @@
         }
 
         .cv-header {
-            background: var(--darker-bg);
-            border-bottom: 1px solid var(--border-color);
+            background: #000000;
+            border-bottom: none;
             padding: 2rem 0;
             margin-bottom: 2rem;
+            position: relative;
         }
 
         .cv-title {
@@ -228,6 +232,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
         }
 
         .back-button:hover {
