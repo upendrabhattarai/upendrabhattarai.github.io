@@ -210,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gradient-primary);
   background-clip: padding-box;
   animation: borderRotate 4s linear infinite;
+  z-index: 1; /* behind the image */
 }
 
 @keyframes borderRotate {
