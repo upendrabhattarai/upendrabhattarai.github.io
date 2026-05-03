@@ -1,600 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Upendra R. Bhattarai</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="../../css/bootstrap.min.css?v=20250825" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00ff88;
-            --secondary-color: #ff6b35;
-            --accent-color: #4ecdc4;
-            --dna-blue: #1e90ff;
-            --rna-red: #ff4757;
-            --protein-green: #2ed573;
-            --dark-bg: #0a0e1a;
-            --darker-bg: #05070f;
-            --card-bg: rgba(0, 255, 136, 0.05);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a8b0;
-            --border-color: rgba(0, 255, 136, 0.2);
-            --gradient-primary: linear-gradient(135deg, #00ff88 0%, #4ecdc4 50%, #1e90ff 100%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        .publications-header {
-            background: #000000;
-            border-bottom: none;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .publications-title {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .publications-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .back-button {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-button:hover {
-            transform: translateY(-2px);
-            color: white;
-            text-decoration: none;
-        }
-
-        .publication-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .publication-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.15);
-        }
-
-        .publication-title {
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .publication-authors {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.5;
-        }
-
-        .publication-journal {
-            color: var(--secondary-color);
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .publication-metrics {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .metric {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .metric i {
-            color: var(--primary-color);
-        }
-
-        .publication-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .pub-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .pub-link:hover {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .year-section {
-            margin-bottom: 3rem;
-        }
-
-        .year-title {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .stats-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .google-scholar-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .google-scholar-link:hover {
-            transform: translateY(-2px);
-            color: white;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .publications-title {
-                font-size: 2rem;
-            }
-            
-            .back-button {
-                position: static;
-                margin-bottom: 2rem;
-                display: inline-block;
-            }
-            
-            .publication-metrics {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications · Upendra R. Bhattarai</title>
+  <link rel="icon" href="../../assets/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="../../css/cover.css?v=20260503" rel="stylesheet">
 </head>
 <body>
-    <a href="../../index.html" class="back-button">
-        <i class="fas fa-arrow-left me-2"></i>Back to Home
-    </a>
 
-    <div class="container">
-        <!-- Header -->
-        <div class="publications-header text-center">
-            <h1 class="publications-title">Publications</h1>
-            <p class="publications-subtitle">Research contributions and scholarly work</p>
-            <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ&hl=en&oi=ao" class="google-scholar-link" target="_blank">
-                <i class="fas fa-graduation-cap"></i>
-                View Google Scholar Profile
-            </a>
-        </div>
-
-        <!-- Statistics -->
-        <div class="stats-section">
-            <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Publication Statistics</h3>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Publications</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Citations</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15.2</div>
-                    <div class="stat-label">h-index</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2018-2025</div>
-                    <div class="stat-label">Publication Years</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Publications by Year -->
-        <div class="year-section">
-            <h2 class="year-title">2025</h2>
-            <div class="publication-card">
-                <div class="publication-title">
-                    Functional profiling of p53 and RB cell cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma
-                </div>
-                <div class="publication-authors">
-                    Yang, Z., Mogre, S., Jun, H., He, R., Chaudhary, S G., Bhattarai, U R., et al.
-                </div>
-                <div class="publication-journal">
-                    Cancer Research Communication
-                </div>
-                <div class="publication-metrics">
-                    <div class="metric">
-                        <i class="fas fa-calendar"></i>
-                        <span>2025</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-quote-left"></i>
-                        <span>Citations: 0</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>DOI: 10.1158/2767-9764.CRC-24-0028</span>
-                    </div>
-                </div>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1158/2767-9764.CRC-24-0028" class="pub-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>DOI
-                    </a>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39932274/" class="pub-link" target="_blank">
-                        <i class="fas fa-book-medical"></i>PubMed
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="year-section">
-            <h2 class="year-title">2023</h2>
-            <div class="publication-card">
-                <div class="publication-title">
-                    The proof is in the poo: Non-invasive method to detect endoparasitic infection
-                </div>
-                <div class="publication-authors">
-                    Doherty, J.-F. §, Bhattarai, U R. §, Ferreira, S., Poulin, R., Gemmell, N J., & Dowle, E J.
-                </div>
-                <div class="publication-journal">
-                    Molecular Ecology Resources
-                </div>
-                <div class="publication-metrics">
-                    <div class="metric">
-                        <i class="fas fa-calendar"></i>
-                        <span>2023</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-quote-left"></i>
-                        <span>Citations: 15+</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>DOI: 10.1111/1755-0998.13763</span>
-                    </div>
-                </div>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1111/1755-0998.13763" class="pub-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>DOI
-                    </a>
-                    <a href="https://onlinelibrary.wiley.com/doi/10.1111/1755-0998.13763" class="pub-link" target="_blank">
-                        <i class="fas fa-book"></i>Journal
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="year-section">
-            <h2 class="year-title">2022</h2>
-            <div class="publication-card">
-                <div class="publication-title">
-                    Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)
-                </div>
-                <div class="publication-authors">
-                    Bhattarai UR, Katuwal M, Poulin R, Gemmell N.J, Dowle E.
-                </div>
-                <div class="publication-journal">
-                    G3 Genes | Genomes | Genetics
-                </div>
-                <div class="publication-metrics">
-                    <div class="metric">
-                        <i class="fas fa-calendar"></i>
-                        <span>2022</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-quote-left"></i>
-                        <span>Citations: 25+</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>DOI: 10.1093/g3journal/jkac199</span>
-                    </div>
-                </div>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1093/g3journal/jkac199" class="pub-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>DOI
-                    </a>
-                    <a href="https://academic.oup.com/g3journal/article/12/10/jkac199/6674444" class="pub-link" target="_blank">
-                        <i class="fas fa-book"></i>Journal
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="year-section">
-            <h2 class="year-title">2018</h2>
-            <div class="publication-card">
-                <div class="publication-title">
-                    Phototransduction and circadian entrainment are the key pathways in signalling mechanism for the baculovirus induced tree-top disease in lepidopteran larvae
-                </div>
-                <div class="publication-authors">
-                    Bhattarai U.R, Li F, Katuwal M, Masoudi A, Wang D.
-                </div>
-                <div class="publication-journal">
-                    Scientific Reports
-                </div>
-                <div class="publication-metrics">
-                    <div class="metric">
-                        <i class="fas fa-calendar"></i>
-                        <span>2018</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-quote-left"></i>
-                        <span>Citations: 110+</span>
-                    </div>
-                    <div class="metric">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>DOI: 10.1038/s41598-018-35885-4</span>
-                    </div>
-                </div>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1038/s41598-018-35885-4" class="pub-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>DOI
-                    </a>
-                    <a href="https://www.nature.com/articles/s41598-018-35885-4" class="pub-link" target="_blank">
-                        <i class="fas fa-book"></i>Journal
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../../index.html" class="brand">
+        <span class="brand-mark">UB</span>
+        <span>Upendra R. Bhattarai</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Projects/projects.html">Research</a></li>
+          <li><a href="publications.html" class="active">Publications</a></li>
+          <li><a href="../CV/cv.html">CV</a></li>
+          <li><a href="mailto:upendrarajbhattarai@gmail.com" class="nav-cta">Get in touch</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      (function() {
-        const scholarUser = 'D58O8q8AAAAJ';
-        const scholarUrl = `https://r.jina.ai/http://scholar.google.com/citations?user=${scholarUser}&hl=en&cstart=0&pagesize=100`;
-        const CACHE_KEY = 'urb_scholar_pubs_v1';
-        const CACHE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="bio-grid"></div>
+    <div class="container">
+      <span class="eyebrow">Scholarly work</span>
+      <h1>Publications</h1>
+      <p class="lede">Peer-reviewed research contributions across genomics, transcriptomics, epigenomics, and host–parasite biology.</p>
 
-        // Loading indicator
-        const container = document.querySelector('.container');
-        const loading = document.createElement('div');
-        loading.style.cssText = 'text-align:center;color:var(--text-secondary);margin:1rem 0;';
-        loading.textContent = 'Loading publications…';
-        container.appendChild(loading);
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.5rem; position: relative; z-index: 1;">
+        <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ&hl=en&oi=ao" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+          <i class="fas fa-graduation-cap"></i> View Google Scholar profile
+        </a>
+        <a href="https://www.researchgate.net/profile/Upendra_Bhattarai" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+          <i class="fab fa-researchgate"></i> ResearchGate
+        </a>
+      </div>
+    </div>
+  </section>
 
-        function createYearSection(year) {
-          const section = document.createElement('div');
-          section.className = 'year-section';
-          section.innerHTML = `<h2 class="year-title">${year}</h2>`;
-          return section;
-        }
+  <section style="padding-top: 1rem;">
+    <div class="container">
 
-        function createCard(pub) {
-          const card = document.createElement('div');
-          card.className = 'publication-card';
-          card.innerHTML = `
-            <div class="publication-title">${pub.title}</div>
-            <div class="publication-authors">${pub.authors}</div>
-            <div class="publication-journal">${pub.venue}</div>
+      <!-- Stats strip -->
+      <div class="stats-strip" style="margin-bottom: 3rem;">
+        <div class="stat">
+          <div class="stat-num" data-stat="publications">17</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-stat="citations">150+</div>
+          <div class="stat-label">Citations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-stat="hindex">—</div>
+          <div class="stat-label">h-index</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-stat="years">2018 — 2025</div>
+          <div class="stat-label">Active years</div>
+        </div>
+      </div>
+
+      <!-- Static fallback content (replaced if Google Scholar fetch succeeds) -->
+      <div id="publications-list">
+
+        <div class="year-section">
+          <h2 class="year-title">2025</h2>
+          <article class="publication-card">
+            <h3 class="publication-title">Functional profiling of p53 and RB cell-cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma</h3>
+            <p class="publication-authors">Yang Z, Mogre S, Jun H, He R, Chaudhary SG, <em>Bhattarai UR</em>, et al.</p>
+            <p class="publication-journal">Cancer Research Communications</p>
             <div class="publication-metrics">
-              <div class="metric"><i class="fas fa-calendar"></i><span>${pub.year || ''}</span></div>
-              ${pub.citations ? `<div class="metric"><i class="fas fa-quote-left"></i><span>Citations: ${pub.citations}</span></div>` : ''}
+              <span class="metric"><i class="far fa-calendar"></i> 2025</span>
+              <span class="metric"><i class="fas fa-quote-left"></i> Citations: 0</span>
             </div>
             <div class="publication-links">
-              ${pub.link ? `<a href="${pub.link}" class="pub-link" target="_blank"><i class="fas fa-external-link-alt"></i>Details</a>` : ''}
+              <a href="https://doi.org/10.1158/2767-9764.CRC-24-0028" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39932274/" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-book-medical"></i> PubMed</a>
             </div>
-          `;
-          return card;
-        }
+          </article>
+        </div>
 
-        function parseScholar(htmlText) {
-          try {
-            const dom = new DOMParser().parseFromString(htmlText, 'text/html');
-            const rows = dom.querySelectorAll('#gsc_a_b .gsc_a_tr');
-            const pubs = [];
-            rows.forEach(row => {
-              const titleEl = row.querySelector('.gsc_a_at');
-              const authorsEl = row.querySelector('.gsc_a_at + .gs_gray');
-              const venueEl = row.querySelector('.gsc_a_at + .gs_gray + .gs_gray');
-              const yearEl = row.querySelector('.gsc_a_y');
-              const link = titleEl ? ('https://scholar.google.com' + titleEl.getAttribute('href')) : '';
-              const year = yearEl ? (yearEl.textContent || '').trim() : '';
-              const title = titleEl ? (titleEl.textContent || '').trim() : '';
-              const authors = authorsEl ? (authorsEl.textContent || '').trim() : '';
-              const venue = venueEl ? (venueEl.textContent || '').trim() : '';
-              pubs.push({ title, authors, venue, year, link });
-            });
-            // Citations
-            const citeRows = dom.querySelectorAll('#gsc_a_b .gsc_a_tr');
-            citeRows.forEach((row, i) => {
-              const citeEl = row.querySelector('.gsc_a_c');
-              const c = citeEl ? (citeEl.textContent || '').trim() : '';
-              if (pubs[i]) pubs[i].citations = c && c !== '-' ? c : '';
-            });
-            return pubs;
-          } catch (e) {
-            console.error('Parse error:', e);
-            return [];
-          }
-        }
+        <div class="year-section">
+          <h2 class="year-title">2023</h2>
+          <article class="publication-card">
+            <h3 class="publication-title">The proof is in the poo: Non-invasive method to detect endoparasitic infection</h3>
+            <p class="publication-authors">Doherty J-F §, <em>Bhattarai UR §</em>, Ferreira S, Poulin R, Gemmell NJ, Dowle EJ</p>
+            <p class="publication-journal">Molecular Ecology Resources</p>
+            <div class="publication-metrics">
+              <span class="metric"><i class="far fa-calendar"></i> 2023</span>
+              <span class="metric"><i class="fas fa-quote-left"></i> Citations: 15+</span>
+            </div>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1111/1755-0998.13763" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+              <a href="https://onlinelibrary.wiley.com/doi/10.1111/1755-0998.13763" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-book"></i> Journal</a>
+            </div>
+          </article>
+        </div>
 
-        function renderPublications(pubs) {
-          loading.remove();
-          // Remove existing hard-coded year sections (if present)
-          document.querySelectorAll('.year-section').forEach(n => n.remove());
+        <div class="year-section">
+          <h2 class="year-title">2022</h2>
+          <article class="publication-card">
+            <h3 class="publication-title">Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)</h3>
+            <p class="publication-authors"><em>Bhattarai UR</em>, Katuwal M, Poulin R, Gemmell NJ, Dowle E</p>
+            <p class="publication-journal">G3 Genes | Genomes | Genetics</p>
+            <div class="publication-metrics">
+              <span class="metric"><i class="far fa-calendar"></i> 2022</span>
+              <span class="metric"><i class="fas fa-quote-left"></i> Citations: 25+</span>
+            </div>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1093/g3journal/jkac199" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+              <a href="https://academic.oup.com/g3journal/article/12/10/jkac199/6674444" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-book"></i> Journal</a>
+            </div>
+          </article>
+        </div>
 
-          // Filter since 2012 and limit to exactly 17 entries in reverse chronological order
-          const filtered = pubs
-            .filter(p => (p.year && /^\d{4}$/.test(p.year) && parseInt(p.year, 10) >= 2012))
-            .sort((a, b) => (parseInt(b.year||'0',10) - parseInt(a.year||'0',10)));
+        <div class="year-section">
+          <h2 class="year-title">2018</h2>
+          <article class="publication-card">
+            <h3 class="publication-title">Phototransduction and circadian entrainment are the key pathways in signalling mechanism for the baculovirus-induced tree-top disease in lepidopteran larvae</h3>
+            <p class="publication-authors"><em>Bhattarai UR</em>, Li F, Katuwal M, Masoudi A, Wang D</p>
+            <p class="publication-journal">Scientific Reports</p>
+            <div class="publication-metrics">
+              <span class="metric"><i class="far fa-calendar"></i> 2018</span>
+              <span class="metric"><i class="fas fa-quote-left"></i> Citations: 110+</span>
+            </div>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1038/s41598-018-35885-4" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+              <a href="https://www.nature.com/articles/s41598-018-35885-4" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-book"></i> Journal</a>
+            </div>
+          </article>
+        </div>
 
-          const limited = filtered.slice(0, 17);
+      </div>
 
-          // Group by year
-          const byYear = limited.reduce((acc, p) => {
-            const y = p.year || 'Unknown';
-            acc[y] = acc[y] || [];
-            acc[y].push(p);
-            return acc;
-          }, {});
+    </div>
+  </section>
 
-          const years = Object.keys(byYear).sort((a,b) => parseInt(b,10)-parseInt(a,10));
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational biology &amp; genomics</div>
+      <div class="socials">
+        <a href="https://github.com/upendrabhattarai" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/Bhattarai_UR" title="Twitter / X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/upendra-raj-bhattarai-518a7039/" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ" title="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Upendra_Bhattarai" title="ResearchGate" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i></a>
+        <a href="mailto:upendrarajbhattarai@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
 
-          if (years.length === 0) {
-            const empty = document.createElement('div');
-            empty.style.cssText = 'text-align:center;color:var(--text-secondary);margin:1rem 0;';
-            empty.textContent = 'No publications available right now. Please try again later.';
-            container.appendChild(empty);
-            return;
-          }
+  <!-- Live Google Scholar enhancement -->
+  <script>
+    (function () {
+      const scholarUser = 'D58O8q8AAAAJ';
+      const scholarUrl = `https://r.jina.ai/http://scholar.google.com/citations?user=${scholarUser}&hl=en&cstart=0&pagesize=100`;
+      const CACHE_KEY = 'urb_scholar_pubs_v2';
+      const CACHE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-          years.forEach(year => {
-            const section = createYearSection(year);
-            byYear[year].forEach(pub => section.appendChild(createCard(pub)));
-            container.appendChild(section);
+      const listEl = document.getElementById('publications-list');
+      if (!listEl) return;
+
+      const loading = document.createElement('div');
+      loading.className = 'loading-text';
+      loading.textContent = 'Refreshing publications…';
+      listEl.parentElement.insertBefore(loading, listEl);
+
+      function escapeHtml(s) {
+        return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      }
+
+      function buildCard(pub) {
+        const card = document.createElement('article');
+        card.className = 'publication-card';
+        card.innerHTML = `
+          <h3 class="publication-title">${escapeHtml(pub.title)}</h3>
+          <p class="publication-authors">${escapeHtml(pub.authors)}</p>
+          <p class="publication-journal">${escapeHtml(pub.venue)}</p>
+          <div class="publication-metrics">
+            ${pub.year ? `<span class="metric"><i class="far fa-calendar"></i> ${escapeHtml(pub.year)}</span>` : ''}
+            ${pub.citations ? `<span class="metric"><i class="fas fa-quote-left"></i> Citations: ${escapeHtml(pub.citations)}</span>` : ''}
+          </div>
+          <div class="publication-links">
+            ${pub.link ? `<a href="${pub.link}" class="pub-pill" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Details</a>` : ''}
+          </div>
+        `;
+        return card;
+      }
+
+      function buildYearSection(year) {
+        const sec = document.createElement('div');
+        sec.className = 'year-section';
+        sec.innerHTML = `<h2 class="year-title">${escapeHtml(year)}</h2>`;
+        return sec;
+      }
+
+      function parseScholar(htmlText) {
+        try {
+          const dom = new DOMParser().parseFromString(htmlText, 'text/html');
+          const rows = dom.querySelectorAll('#gsc_a_b .gsc_a_tr');
+          const pubs = [];
+          rows.forEach(row => {
+            const titleEl = row.querySelector('.gsc_a_at');
+            const authorsEl = row.querySelector('.gsc_a_at + .gs_gray');
+            const venueEl = row.querySelector('.gsc_a_at + .gs_gray + .gs_gray');
+            const yearEl = row.querySelector('.gsc_a_y');
+            const citeEl = row.querySelector('.gsc_a_c');
+            const link = titleEl ? ('https://scholar.google.com' + titleEl.getAttribute('href')) : '';
+            const title = titleEl ? (titleEl.textContent || '').trim() : '';
+            const authors = authorsEl ? (authorsEl.textContent || '').trim() : '';
+            const venue = venueEl ? (venueEl.textContent || '').trim() : '';
+            const year = yearEl ? (yearEl.textContent || '').trim() : '';
+            const c = citeEl ? (citeEl.textContent || '').trim() : '';
+            pubs.push({ title, authors, venue, year, link, citations: c && c !== '-' ? c : '' });
           });
-
-          // Update stats
-          const totalPubs = limited.length;
-          const yearsSpan = years.length ? `${years[years.length-1]}-${years[0]}` : '';
-          const citations = limited.reduce((sum, p) => sum + (parseInt((p.citations||'').replace(/\D/g,'')||'0',10)), 0);
-          const statEls = document.querySelectorAll('.stat-number');
-          if (statEls[0]) statEls[0].textContent = totalPubs.toString();
-          if (statEls[1]) statEls[1].textContent = citations ? `${citations}+` : '—';
-          if (statEls[2]) statEls[2].textContent = '—'; // h-index not computed here
-          if (statEls[3]) statEls[3].textContent = yearsSpan;
+          return pubs;
+        } catch (e) {
+          console.error('Parse error:', e);
+          return [];
         }
+      }
 
-        function loadFromCache() {
-          try {
-            const raw = localStorage.getItem(CACHE_KEY);
-            if (!raw) return null;
-            const { ts, pubs } = JSON.parse(raw);
-            if (!Array.isArray(pubs)) return null;
-            if (Date.now() - ts > CACHE_MS) return null;
-            return pubs;
-          } catch { return null; }
-        }
+      function render(pubs) {
+        loading.remove();
+        const filtered = pubs
+          .filter(p => p.year && /^\d{4}$/.test(p.year) && parseInt(p.year, 10) >= 2012)
+          .sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));
 
-        function saveToCache(pubs) {
-          try {
-            localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), pubs }));
-          } catch {}
-        }
+        const limited = filtered.slice(0, 17);
+        if (!limited.length) return; // keep static fallback
 
-        const cached = loadFromCache();
-        if (cached) {
-          renderPublications(cached);
-        }
+        // clear and rebuild
+        listEl.innerHTML = '';
+        const byYear = limited.reduce((acc, p) => {
+          (acc[p.year] = acc[p.year] || []).push(p);
+          return acc;
+        }, {});
+        const years = Object.keys(byYear).sort((a, b) => parseInt(b, 10) - parseInt(a, 10));
 
-        fetch(scholarUrl)
-          .then(r => r.text())
-          .then(t => {
-            const pubs = parseScholar(t);
-            if (pubs && pubs.length) {
-              saveToCache(pubs);
-              renderPublications(pubs);
-            } else if (!cached) {
-              renderPublications([]);
-            }
-          })
-          .catch(err => {
-            console.error('Failed to load Google Scholar:', err);
-            if (cached) {
-              renderPublications(cached);
-            } else {
-              renderPublications([]);
-            }
-          });
-      })();
-    </script>
+        years.forEach(year => {
+          const section = buildYearSection(year);
+          byYear[year].forEach(p => section.appendChild(buildCard(p)));
+          listEl.appendChild(section);
+        });
+
+        // update stats
+        const totalCites = limited.reduce(
+          (sum, p) => sum + parseInt(((p.citations || '').match(/\d+/) || ['0'])[0], 10),
+          0
+        );
+        const yearsSpan = years.length ? `${years[years.length - 1]} — ${years[0]}` : '—';
+        const setStat = (key, val) => {
+          const el = document.querySelector(`[data-stat="${key}"]`);
+          if (el) el.textContent = val;
+        };
+        setStat('publications', String(limited.length));
+        setStat('citations', totalCites ? `${totalCites}+` : '—');
+        setStat('years', yearsSpan);
+      }
+
+      function loadCache() {
+        try {
+          const raw = localStorage.getItem(CACHE_KEY);
+          if (!raw) return null;
+          const { ts, pubs } = JSON.parse(raw);
+          if (!Array.isArray(pubs)) return null;
+          if (Date.now() - ts > CACHE_MS) return null;
+          return pubs;
+        } catch { return null; }
+      }
+      function saveCache(pubs) {
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), pubs })); } catch {}
+      }
+
+      const cached = loadCache();
+      if (cached) render(cached);
+
+      fetch(scholarUrl)
+        .then(r => r.text())
+        .then(t => {
+          const pubs = parseScholar(t);
+          if (pubs && pubs.length) {
+            saveCache(pubs);
+            render(pubs);
+          } else if (!cached) {
+            loading.remove();
+          }
+        })
+        .catch(err => {
+          console.error('Scholar fetch failed:', err);
+          if (!cached) loading.remove();
+        });
+    })();
+  </script>
+
 </body>
 </html>

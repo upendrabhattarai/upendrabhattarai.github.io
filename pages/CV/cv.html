@@ -1,481 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upendra R. Bhattarai - Curriculum Vitae</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00ff88;
-            --secondary-color: #ff6b35;
-            --accent-color: #4ecdc4;
-            --dna-blue: #1e90ff;
-            --rna-red: #ff4757;
-            --protein-green: #2ed573;
-            --dark-bg: #0a0e1a;
-            --darker-bg: #05070f;
-            --card-bg: rgba(0, 255, 136, 0.05);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a8b0;
-            --border-color: rgba(0, 255, 136, 0.2);
-            --gradient-primary: linear-gradient(135deg, #00ff88 0%, #4ecdc4 50%, #1e90ff 100%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        .cv-header {
-            background: #000000;
-            border-bottom: none;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .cv-title {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .cv-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        .contact-item:hover {
-            color: var(--primary-color);
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary-color);
-            border-radius: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 1.2rem;
-            width: 2px;
-            height: calc(100% + 1rem);
-            background: var(--border-color);
-        }
-
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-
-        .timeline-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .timeline-subtitle {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skill-list li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: '▸';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        .publication-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .publication-item:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .publication-title {
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .publication-authors {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .publication-journal {
-            color: var(--secondary-color);
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-
-        .back-button {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
-        }
-
-        .back-button:hover {
-            transform: translateY(-2px);
-            color: white;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .cv-title {
-                font-size: 2rem;
-            }
-            
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .timeline-date {
-                margin-top: 0.5rem;
-            }
-            
-            .back-button {
-                position: static;
-                margin-bottom: 2rem;
-                display: inline-block;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae · Upendra R. Bhattarai</title>
+  <link rel="icon" href="../../assets/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="../../css/cover.css?v=20260503" rel="stylesheet">
 </head>
 <body>
-    <a href="../../index.html" class="back-button">
-        <i class="fas fa-arrow-left me-2"></i>Back to Home
-    </a>
 
-    <div class="container">
-        <!-- Header -->
-        <div class="cv-header text-center">
-            <h1 class="cv-title">Upendra R. Bhattarai</h1>
-            <p class="cv-subtitle">Research Associate, Harvard Chan Bioinformatics Core</p>
-            <div class="contact-info justify-content-center">
-                <a href="mailto:upendrarajbhattarai@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    upendrarajbhattarai@gmail.com
-                </a>
-                <a href="https://github.com/upendrabhattarai" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    github.com/upendrabhattarai
-                </a>
-                <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ" class="contact-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    Google Scholar
-                </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-8">
-                <!-- Education -->
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-graduation-cap me-2"></i>Education
-                    </h2>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">PhD in Genetics</div>
-                            <div class="timeline-date">2019-2023</div>
-                        </div>
-                        <div class="timeline-subtitle">University of Otago, New Zealand</div>
-                        <div class="timeline-description">
-                            Investigated host-parasite molecular interactions using genomics, transcriptomics, and epigenetics. Applied RNA-seq, Nanopore sequencing, Bisulfite sequencing, and network analysis.
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">PhD in Agricultural Entomology and Pest Control</div>
-                            <div class="timeline-date">2014-2018</div>
-                        </div>
-                        <div class="timeline-subtitle">Northwest A&F University, China</div>
-                        <div class="timeline-description">
-                            Studied the mechanism of host manipulation in viral-infected lepidopterans. Used genome-wide transcriptomics and functional genomics to study Circadian rhythms and Phototransduction mechanisms.
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">MSc in Plant Science</div>
-                            <div class="timeline-date">2010-2012</div>
-                        </div>
-                        <div class="timeline-subtitle">Norwegian University of Life Science, Norway</div>
-                        <div class="timeline-description">
-                            Focused on interactions between fungal pathogen and their host mites for host behavioral manipulation.
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">BSc in Agriculture</div>
-                            <div class="timeline-date">2005-2009</div>
-                        </div>
-                        <div class="timeline-subtitle">Tribhuvan University, Nepal</div>
-                        <div class="timeline-description">
-                            Bachelor's degree in Agriculture.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Experience -->
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-briefcase me-2"></i>Professional Experience
-                    </h2>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">Research Associate</div>
-                            <div class="timeline-date">March 2024-Present</div>
-                        </div>
-                        <div class="timeline-subtitle">Harvard Chan Bioinformatics Core, Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, MA</div>
-                        <div class="timeline-description">
-                            Provide bioinformatics consultation and technical support to researchers across Harvard. Develop and deliver training workshops on bioinformatics tools, data analysis, and best practices. Collaborate with interdisciplinary teams to analyse and interpret high-throughput sequencing and omics data. Assist in optimizing computational workflows for large-scale biological datasets. Experienced in working with Human, Mouse, and diverse organism models.
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">Postdoctoral Fellow</div>
-                            <div class="timeline-date">May 2022-March 2024</div>
-                        </div>
-                        <div class="timeline-subtitle">Extavour lab, Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA</div>
-                        <div class="timeline-description">
-                            Worked on developing five different hemimetabolous insects as the genetic model species. Assembled chromosome level genome assemblies, annotated and carried out comparative genomic analysis. Conducted RNA-seq analysis to profile gene expression in temporal and spatial scale. Carried out comparative genomics and transcriptomics, identifying evolutionary patterns in gene regulation.
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-title">Research Technician</div>
-                            <div class="timeline-date">2012-2013</div>
-                        </div>
-                        <div class="timeline-subtitle">Norwegian Institute for Agricultural and Environmental Research (Bioforsk), Ås, Norway</div>
-                        <div class="timeline-description">
-                            Performed several laboratory experiments involving three trophic levels (fungus, mites, and plants). Maintain laboratory cultures of Acaro-pathogenic fungi, mites, flies, and plants. Carried out different lab experiments on host-pathogen interactions.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research Interests -->
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-flask me-2"></i>Research Interests
-                    </h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-dna me-2"></i>Genomics</h4>
-                            <ul class="skill-list">
-                                <li>De novo genome assembly</li>
-                                <li>Genome annotation</li>
-                                <li>Comparative genomics</li>
-                                <li>Structural variant analysis</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-chart-line me-2"></i>Transcriptomics</h4>
-                            <ul class="skill-list">
-                                <li>RNA-seq analysis</li>
-                                <li>Differential expression</li>
-                                <li>Alternative splicing</li>
-                                <li>Single-cell RNA-seq</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-layer-group me-2"></i>Epigenomics</h4>
-                            <ul class="skill-list">
-                                <li>DNA methylation analysis</li>
-                                <li>Chromatin accessibility</li>
-                                <li>ChIP-seq analysis</li>
-                                <li>Epigenetic regulation</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-bug me-2"></i>Host-Parasite Interactions</h4>
-                            <ul class="skill-list">
-                                <li>Behavioral manipulation</li>
-                                <li>Molecular mechanisms</li>
-                                <li>Evolutionary dynamics</li>
-                                <li>Insect-parasite systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <!-- Publications -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-book-open me-2"></i>Selected Publications
-            </h2>
-            <div class="publication-item">
-                <div class="publication-title">
-                    Functional profiling of p53 and RB cell cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma
-                </div>
-                <div class="publication-authors">
-                    Yang, Z., Mogre, S., Jun, H., He, R., Chaudhary, S G., Bhattarai, U R., et al.
-                </div>
-                <div class="publication-journal">
-                    Cancer Research Communication, 2025. DOI: 10.1158/2767-9764.CRC-24-0028
-                </div>
-            </div>
-            <div class="publication-item">
-                <div class="publication-title">
-                    The proof is in the poo: Non-invasive method to detect endoparasitic infection
-                </div>
-                <div class="publication-authors">
-                    Doherty, J.-F. §, Bhattarai, U R. §, Ferreira, S., Poulin, R., Gemmell, N J., & Dowle, E J.
-                </div>
-                <div class="publication-journal">
-                    Molecular Ecology Resources, 2023. DOI: 10.1111/1755-0998.13763
-                </div>
-            </div>
-            <div class="publication-item">
-                <div class="publication-title">
-                    Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)
-                </div>
-                <div class="publication-authors">
-                    Bhattarai UR, Katuwal M, Poulin R, Gemmell N.J, Dowle E.
-                </div>
-                <div class="publication-journal">
-                    G3 Genes | Genomes | Genetics, 2022. DOI: 10.1093/g3journal/jkac199
-                </div>
-            </div>
-            <div class="publication-item">
-                <div class="publication-title">
-                    Phototransduction and circadian entrainment are the key pathways in signalling mechanism for the baculovirus induced tree-top disease in lepidopteran larvae
-                </div>
-                <div class="publication-authors">
-                    Bhattarai U.R, Li F, Katuwal M, Masoudi A, Wang D.
-                </div>
-                <div class="publication-journal">
-                    Scientific Reports, 2018. DOI: 10.1038/s41598-018-35885-4
-                </div>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../../index.html" class="brand">
+        <span class="brand-mark">UB</span>
+        <span>Upendra R. Bhattarai</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Projects/projects.html">Research</a></li>
+          <li><a href="../publications/publications.html">Publications</a></li>
+          <li><a href="cv.html" class="active">CV</a></li>
+          <li><a href="mailto:upendrarajbhattarai@gmail.com" class="nav-cta">Get in touch</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="bio-grid"></div>
+    <div class="container">
+      <span class="eyebrow">Curriculum vitae</span>
+      <h1>Upendra R. Bhattarai</h1>
+      <p class="lede">Research Associate, Harvard Chan Bioinformatics Core · Department of Biostatistics, Harvard T.H. Chan School of Public Health</p>
+
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.5rem; position: relative; z-index: 1;">
+        <a href="CV_Upendra.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+          <i class="fa-regular fa-file-pdf"></i> Download PDF
+        </a>
+        <a href="mailto:upendrarajbhattarai@gmail.com" class="btn btn-ghost btn-sm">
+          <i class="fa-regular fa-envelope"></i> Email
+        </a>
+        <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+          <i class="fas fa-graduation-cap"></i> Google Scholar
+        </a>
+        <a href="https://github.com/upendrabhattarai" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 1rem;">
+    <div class="container">
+      <div class="row" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+
+        <!-- Education -->
+        <div class="cv-section">
+          <h2 class="section-title-cv"><i class="fas fa-graduation-cap"></i> Education</h2>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">PhD in Genetics</div>
+              <div class="timeline-date">2019 — 2023</div>
+            </div>
+            <div class="timeline-subtitle">University of Otago, New Zealand</div>
+            <p class="timeline-description">
+              Investigated host–parasite molecular interactions using genomics, transcriptomics, and epigenetics. Applied RNA-seq, Nanopore sequencing, bisulfite sequencing, and network analysis.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">PhD in Agricultural Entomology and Pest Control</div>
+              <div class="timeline-date">2014 — 2018</div>
+            </div>
+            <div class="timeline-subtitle">Northwest A&amp;F University, China</div>
+            <p class="timeline-description">
+              Studied host manipulation in viral-infected lepidopterans. Used genome-wide transcriptomics and functional genomics to study circadian rhythms and phototransduction mechanisms.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">MSc in Plant Science</div>
+              <div class="timeline-date">2010 — 2012</div>
+            </div>
+            <div class="timeline-subtitle">Norwegian University of Life Sciences, Norway</div>
+            <p class="timeline-description">
+              Focused on interactions between fungal pathogens and their host mites in the context of behavioural manipulation.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">BSc in Agriculture</div>
+              <div class="timeline-date">2005 — 2009</div>
+            </div>
+            <div class="timeline-subtitle">Tribhuvan University, Nepal</div>
+            <p class="timeline-description">Bachelor's degree in Agriculture.</p>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="cv-section">
+          <h2 class="section-title-cv"><i class="fas fa-briefcase"></i> Professional experience</h2>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Research Associate</div>
+              <div class="timeline-date">Mar 2024 — Present</div>
+            </div>
+            <div class="timeline-subtitle">Harvard Chan Bioinformatics Core · Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, MA</div>
+            <p class="timeline-description">
+              Provide bioinformatics consultation and technical support to researchers across Harvard. Develop and deliver workshops on bioinformatics tools, data analysis, and best practices. Collaborate with interdisciplinary teams to analyse and interpret high-throughput sequencing and omics data, and help optimise computational workflows for large-scale biological datasets — across human, mouse, and diverse organism models.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Postdoctoral Fellow</div>
+              <div class="timeline-date">May 2022 — Mar 2024</div>
+            </div>
+            <div class="timeline-subtitle">Extavour Lab · Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA</div>
+            <p class="timeline-description">
+              Developed five hemimetabolous insect species as genetic model organisms. Assembled chromosome-level genomes, annotated, and carried out comparative genomic and transcriptomic analyses to identify evolutionary patterns in gene regulation across temporal and spatial scales.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Research Technician</div>
+              <div class="timeline-date">2012 — 2013</div>
+            </div>
+            <div class="timeline-subtitle">Norwegian Institute for Agricultural and Environmental Research (Bioforsk), Ås, Norway</div>
+            <p class="timeline-description">
+              Performed laboratory experiments across three trophic levels (fungus, mites, plants). Maintained cultures of acaropathogenic fungi, mites, flies, and plants, and conducted experiments on host–pathogen interactions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Research Interests -->
+        <div class="cv-section">
+          <h2 class="section-title-cv"><i class="fas fa-flask"></i> Research interests</h2>
+
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4><i class="fas fa-dna"></i> Genomics</h4>
+              <ul class="skill-list">
+                <li>De novo genome assembly</li>
+                <li>Genome annotation</li>
+                <li>Comparative genomics</li>
+                <li>Structural variant analysis</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4><i class="fas fa-chart-line"></i> Transcriptomics</h4>
+              <ul class="skill-list">
+                <li>Bulk &amp; single-cell RNA-seq</li>
+                <li>Differential expression</li>
+                <li>Alternative splicing</li>
+                <li>Cell-state inference</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4><i class="fas fa-layer-group"></i> Epigenomics</h4>
+              <ul class="skill-list">
+                <li>DNA methylation (WGBS)</li>
+                <li>Chromatin accessibility</li>
+                <li>ChIP-seq / CUT&amp;RUN</li>
+                <li>Epigenetic regulation</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4><i class="fas fa-bug"></i> Host–parasite interactions</h4>
+              <ul class="skill-list">
+                <li>Behavioural manipulation</li>
+                <li>Molecular mechanisms</li>
+                <li>Evolutionary dynamics</li>
+                <li>Insect–parasite systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selected Publications -->
+        <div class="cv-section">
+          <h2 class="section-title-cv"><i class="fas fa-book-open"></i> Selected publications</h2>
+
+          <div class="pub-row">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3 class="pub-title">Functional profiling of p53 and RB cell-cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma</h3>
+              <p class="pub-meta">Yang Z, Mogre S, Jun H, He R, Chaudhary SG, <em>Bhattarai UR</em>, et al. · <em>Cancer Research Communications</em> · DOI: 10.1158/2767-9764.CRC-24-0028</p>
+            </div>
+            <a href="https://doi.org/10.1158/2767-9764.CRC-24-0028" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+              <i class="fas fa-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="pub-row">
+            <span class="pub-year">2023</span>
+            <div>
+              <h3 class="pub-title">The proof is in the poo: Non-invasive method to detect endoparasitic infection</h3>
+              <p class="pub-meta">Doherty J-F §, <em>Bhattarai UR §</em>, Ferreira S, Poulin R, Gemmell NJ, Dowle EJ · <em>Molecular Ecology Resources</em> · DOI: 10.1111/1755-0998.13763</p>
+            </div>
+            <a href="https://doi.org/10.1111/1755-0998.13763" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+              <i class="fas fa-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="pub-row">
+            <span class="pub-year">2022</span>
+            <div>
+              <h3 class="pub-title">Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)</h3>
+              <p class="pub-meta"><em>Bhattarai UR</em>, Katuwal M, Poulin R, Gemmell NJ, Dowle E · <em>G3 Genes | Genomes | Genetics</em> · DOI: 10.1093/g3journal/jkac199</p>
+            </div>
+            <a href="https://doi.org/10.1093/g3journal/jkac199" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+              <i class="fas fa-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="pub-row">
+            <span class="pub-year">2018</span>
+            <div>
+              <h3 class="pub-title">Phototransduction and circadian entrainment as the key signalling pathways in baculovirus-induced tree-top disease in lepidopteran larvae</h3>
+              <p class="pub-meta"><em>Bhattarai UR</em>, Li F, Katuwal M, Masoudi A, Wang D · <em>Scientific Reports</em> · DOI: 10.1038/s41598-018-35885-4</p>
+            </div>
+            <a href="https://doi.org/10.1038/s41598-018-35885-4" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+              <i class="fas fa-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <a href="../publications/publications.html" class="btn btn-ghost btn-sm">
+              See all publications <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational biology &amp; genomics</div>
+      <div class="socials">
+        <a href="https://github.com/upendrabhattarai" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/Bhattarai_UR" title="Twitter / X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/upendra-raj-bhattarai-518a7039/" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=D58O8q8AAAAJ" title="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Upendra_Bhattarai" title="ResearchGate" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i></a>
+        <a href="mailto:upendrarajbhattarai@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
