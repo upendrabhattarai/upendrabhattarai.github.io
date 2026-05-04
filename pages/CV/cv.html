@@ -6,7 +6,51 @@
   <title>Curriculum Vitae · Upendra R. Bhattarai</title>
   <link rel="icon" href="../../assets/favicons/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="../../css/cover.css?v=20260503" rel="stylesheet">
+  <link href="../../css/cover.css?v=20260503b" rel="stylesheet">
+  <style>
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-2);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.85rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .summary-card p {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+    .cv-list-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1.25rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .cv-list-item:last-child { border-bottom: 0; }
+    .cv-list-item .year {
+      font-family: var(--mono);
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .cv-list-item .body {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+    .cv-list-item .body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .cv-list-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,8 +78,8 @@
     <div class="bio-grid"></div>
     <div class="container">
       <span class="eyebrow">Curriculum vitae</span>
-      <h1>Upendra R. Bhattarai</h1>
-      <p class="lede">Research Associate, Harvard Chan Bioinformatics Core · Department of Biostatistics, Harvard T.H. Chan School of Public Health</p>
+      <h1>Upendra R. Bhattarai, PhD</h1>
+      <p class="lede">Senior Data Scientist · Center for Translational Neuroscience, Brown University · Providence, RI</p>
 
       <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.5rem; position: relative; z-index: 1;">
         <a href="CV_Upendra.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
@@ -56,200 +100,350 @@
 
   <section style="padding-top: 1rem;">
     <div class="container">
-      <div class="row" style="display: grid; grid-template-columns: 1fr; gap: 0;">
 
-        <!-- Education -->
-        <div class="cv-section">
-          <h2 class="section-title-cv"><i class="fas fa-graduation-cap"></i> Education</h2>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">PhD in Genetics</div>
-              <div class="timeline-date">2019 — 2023</div>
-            </div>
-            <div class="timeline-subtitle">University of Otago, New Zealand</div>
-            <p class="timeline-description">
-              Investigated host–parasite molecular interactions using genomics, transcriptomics, and epigenetics. Applied RNA-seq, Nanopore sequencing, bisulfite sequencing, and network analysis.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">PhD in Agricultural Entomology and Pest Control</div>
-              <div class="timeline-date">2014 — 2018</div>
-            </div>
-            <div class="timeline-subtitle">Northwest A&amp;F University, China</div>
-            <p class="timeline-description">
-              Studied host manipulation in viral-infected lepidopterans. Used genome-wide transcriptomics and functional genomics to study circadian rhythms and phototransduction mechanisms.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">MSc in Plant Science</div>
-              <div class="timeline-date">2010 — 2012</div>
-            </div>
-            <div class="timeline-subtitle">Norwegian University of Life Sciences, Norway</div>
-            <p class="timeline-description">
-              Focused on interactions between fungal pathogens and their host mites in the context of behavioural manipulation.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">BSc in Agriculture</div>
-              <div class="timeline-date">2005 — 2009</div>
-            </div>
-            <div class="timeline-subtitle">Tribhuvan University, Nepal</div>
-            <p class="timeline-description">Bachelor's degree in Agriculture.</p>
-          </div>
+      <!-- Professional summary -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-user-tie"></i> Professional summary</h2>
+        <div class="summary-card">
+          <p>
+            Computational research scientist with extensive expertise in multi-omics integration and molecular biology.
+            Proven track record in developing analytical frameworks for genome assembly and annotation, transcriptomics
+            (single-cell and bulk RNA-seq), and epigenetics across diverse model organisms. Expert in leveraging short
+            and long read sequencing (PacBio / Nanopore) to investigate the molecular basis of neurodevelopmental
+            disorders, oncology, developmental biology, and host–parasite dynamics. Skilled at leading cross-institutional
+            and international research collaborations, and translating complex high-dimensional data into actionable
+            biological insights through a unique blend of computational rigor and wet-lab experience.
+          </p>
         </div>
-
-        <!-- Professional Experience -->
-        <div class="cv-section">
-          <h2 class="section-title-cv"><i class="fas fa-briefcase"></i> Professional experience</h2>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Research Associate</div>
-              <div class="timeline-date">Mar 2024 — Present</div>
-            </div>
-            <div class="timeline-subtitle">Harvard Chan Bioinformatics Core · Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, MA</div>
-            <p class="timeline-description">
-              Provide bioinformatics consultation and technical support to researchers across Harvard. Develop and deliver workshops on bioinformatics tools, data analysis, and best practices. Collaborate with interdisciplinary teams to analyse and interpret high-throughput sequencing and omics data, and help optimise computational workflows for large-scale biological datasets — across human, mouse, and diverse organism models.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Postdoctoral Fellow</div>
-              <div class="timeline-date">May 2022 — Mar 2024</div>
-            </div>
-            <div class="timeline-subtitle">Extavour Lab · Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA</div>
-            <p class="timeline-description">
-              Developed five hemimetabolous insect species as genetic model organisms. Assembled chromosome-level genomes, annotated, and carried out comparative genomic and transcriptomic analyses to identify evolutionary patterns in gene regulation across temporal and spatial scales.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Research Technician</div>
-              <div class="timeline-date">2012 — 2013</div>
-            </div>
-            <div class="timeline-subtitle">Norwegian Institute for Agricultural and Environmental Research (Bioforsk), Ås, Norway</div>
-            <p class="timeline-description">
-              Performed laboratory experiments across three trophic levels (fungus, mites, plants). Maintained cultures of acaropathogenic fungi, mites, flies, and plants, and conducted experiments on host–pathogen interactions.
-            </p>
-          </div>
-        </div>
-
-        <!-- Research Interests -->
-        <div class="cv-section">
-          <h2 class="section-title-cv"><i class="fas fa-flask"></i> Research interests</h2>
-
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h4><i class="fas fa-dna"></i> Genomics</h4>
-              <ul class="skill-list">
-                <li>De novo genome assembly</li>
-                <li>Genome annotation</li>
-                <li>Comparative genomics</li>
-                <li>Structural variant analysis</li>
-              </ul>
-            </div>
-            <div class="skill-category">
-              <h4><i class="fas fa-chart-line"></i> Transcriptomics</h4>
-              <ul class="skill-list">
-                <li>Bulk &amp; single-cell RNA-seq</li>
-                <li>Differential expression</li>
-                <li>Alternative splicing</li>
-                <li>Cell-state inference</li>
-              </ul>
-            </div>
-            <div class="skill-category">
-              <h4><i class="fas fa-layer-group"></i> Epigenomics</h4>
-              <ul class="skill-list">
-                <li>DNA methylation (WGBS)</li>
-                <li>Chromatin accessibility</li>
-                <li>ChIP-seq / CUT&amp;RUN</li>
-                <li>Epigenetic regulation</li>
-              </ul>
-            </div>
-            <div class="skill-category">
-              <h4><i class="fas fa-bug"></i> Host–parasite interactions</h4>
-              <ul class="skill-list">
-                <li>Behavioural manipulation</li>
-                <li>Molecular mechanisms</li>
-                <li>Evolutionary dynamics</li>
-                <li>Insect–parasite systems</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Selected Publications -->
-        <div class="cv-section">
-          <h2 class="section-title-cv"><i class="fas fa-book-open"></i> Selected publications</h2>
-
-          <div class="pub-row">
-            <span class="pub-year">2025</span>
-            <div>
-              <h3 class="pub-title">Functional profiling of p53 and RB cell-cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma</h3>
-              <p class="pub-meta">Yang Z, Mogre S, Jun H, He R, Chaudhary SG, <em>Bhattarai UR</em>, et al. · <em>Cancer Research Communications</em> · DOI: 10.1158/2767-9764.CRC-24-0028</p>
-            </div>
-            <a href="https://doi.org/10.1158/2767-9764.CRC-24-0028" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
-              <i class="fas fa-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <div class="pub-row">
-            <span class="pub-year">2023</span>
-            <div>
-              <h3 class="pub-title">The proof is in the poo: Non-invasive method to detect endoparasitic infection</h3>
-              <p class="pub-meta">Doherty J-F §, <em>Bhattarai UR §</em>, Ferreira S, Poulin R, Gemmell NJ, Dowle EJ · <em>Molecular Ecology Resources</em> · DOI: 10.1111/1755-0998.13763</p>
-            </div>
-            <a href="https://doi.org/10.1111/1755-0998.13763" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
-              <i class="fas fa-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <div class="pub-row">
-            <span class="pub-year">2022</span>
-            <div>
-              <h3 class="pub-title">Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)</h3>
-              <p class="pub-meta"><em>Bhattarai UR</em>, Katuwal M, Poulin R, Gemmell NJ, Dowle E · <em>G3 Genes | Genomes | Genetics</em> · DOI: 10.1093/g3journal/jkac199</p>
-            </div>
-            <a href="https://doi.org/10.1093/g3journal/jkac199" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
-              <i class="fas fa-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <div class="pub-row">
-            <span class="pub-year">2018</span>
-            <div>
-              <h3 class="pub-title">Phototransduction and circadian entrainment as the key signalling pathways in baculovirus-induced tree-top disease in lepidopteran larvae</h3>
-              <p class="pub-meta"><em>Bhattarai UR</em>, Li F, Katuwal M, Masoudi A, Wang D · <em>Scientific Reports</em> · DOI: 10.1038/s41598-018-35885-4</p>
-            </div>
-            <a href="https://doi.org/10.1038/s41598-018-35885-4" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
-              <i class="fas fa-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <div style="margin-top: 1.5rem;">
-            <a href="../publications/publications.html" class="btn btn-ghost btn-sm">
-              See all publications <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Professional Experience -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-briefcase"></i> Professional experience</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">Senior Data Scientist</div>
+            <div class="timeline-date">Nov 2025 — Present</div>
+          </div>
+          <div class="timeline-subtitle">Center for Translational Neuroscience · Brown University, Providence, RI</div>
+          <p class="timeline-description">
+            Lead bioinformatics strategy and advance multi-omics data integration for neurodegenerative disease research,
+            driving insights across diverse faculty- and student-led projects. Mentor and supervise graduate students on
+            computational methodology, ensuring rigorous experimental design, reproducible analysis, and high-standard
+            data interpretation. Collaborate with clinical and laboratory teams to translate complex sequencing data
+            into biologically meaningful results for translational medicine. Optimise scalable data storage solutions
+            and standardise high-throughput analysis pipelines, increasing computational efficiency and reproducibility
+            across the CTN.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">Research Associate</div>
+            <div class="timeline-date">Mar 2024 — Nov 2025</div>
+          </div>
+          <div class="timeline-subtitle">Harvard Chan Bioinformatics Core · Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, MA</div>
+          <p class="timeline-description">
+            Provided bioinformatics consultation and technical support to researchers across Harvard. Developed and
+            delivered training workshops on bioinformatics tools, data analysis, and best practices. Collaborated with
+            interdisciplinary teams to analyse and interpret high-throughput sequencing and omics data, and helped
+            optimise computational workflows for large-scale biological datasets — across human, mouse, and diverse
+            organism models.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">Postdoctoral Fellow</div>
+            <div class="timeline-date">May 2022 — Mar 2024</div>
+          </div>
+          <div class="timeline-subtitle">Extavour Lab · Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA</div>
+          <p class="timeline-description">
+            Developed five hemimetabolous insect species as genetic model organisms. Assembled chromosome-level genomes,
+            annotated, and carried out comparative genomic and transcriptomic analyses to identify evolutionary patterns
+            in gene regulation across temporal and spatial scales.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">Research Technician</div>
+            <div class="timeline-date">2012 — 2013</div>
+          </div>
+          <div class="timeline-subtitle">Norwegian Institute for Agricultural and Environmental Research (Bioforsk), Ås, Norway</div>
+          <p class="timeline-description">
+            Performed laboratory experiments across three trophic levels (fungus, mites, plants). Maintained cultures of
+            acaropathogenic fungi, mites, flies, and plants, and conducted experiments on host–pathogen interactions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-graduation-cap"></i> Education</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">PhD in Genetics</div>
+            <div class="timeline-date">2019 — 2023</div>
+          </div>
+          <div class="timeline-subtitle">University of Otago, New Zealand</div>
+          <p class="timeline-description">
+            Investigated host–parasite molecular interactions using genomics, transcriptomics, and epigenetics. Applied RNA-seq, Nanopore sequencing, bisulfite sequencing, and network analysis.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">PhD in Agricultural Entomology and Pest Control</div>
+            <div class="timeline-date">2014 — 2018</div>
+          </div>
+          <div class="timeline-subtitle">Northwest A&amp;F University, China</div>
+          <p class="timeline-description">
+            Studied host manipulation in viral-infected lepidopterans. Used genome-wide transcriptomics and functional genomics to study circadian rhythms and phototransduction mechanisms.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">MSc in Plant Science</div>
+            <div class="timeline-date">2010 — 2012</div>
+          </div>
+          <div class="timeline-subtitle">Norwegian University of Life Sciences, Norway</div>
+          <p class="timeline-description">
+            Focused on interactions between fungal pathogens and their host mites in the context of behavioural manipulation.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-title">BSc in Agriculture</div>
+            <div class="timeline-date">2005 — 2009</div>
+          </div>
+          <div class="timeline-subtitle">Tribhuvan University, Nepal</div>
+          <p class="timeline-description">Bachelor's degree in Agriculture.</p>
+        </div>
+      </div>
+
+      <!-- Research Interests -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-flask"></i> Research interests</h2>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><i class="fas fa-dna"></i> Genomics</h4>
+            <ul class="skill-list">
+              <li>De novo genome assembly</li>
+              <li>Genome annotation</li>
+              <li>Comparative genomics</li>
+              <li>Long-read sequencing (PacBio / Nanopore)</li>
+              <li>Structural variant analysis</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-chart-line"></i> Transcriptomics</h4>
+            <ul class="skill-list">
+              <li>Bulk &amp; single-cell RNA-seq</li>
+              <li>Differential expression</li>
+              <li>Alternative splicing</li>
+              <li>Cell-state inference</li>
+              <li>Multi-omics integration</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-layer-group"></i> Epigenomics</h4>
+            <ul class="skill-list">
+              <li>DNA methylation (WGBS)</li>
+              <li>Chromatin accessibility</li>
+              <li>ChIP-seq / CUT&amp;RUN</li>
+              <li>Epigenetic regulation</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-brain"></i> Translational neuroscience</h4>
+            <ul class="skill-list">
+              <li>Neurodevelopmental disorders</li>
+              <li>Neurodegenerative disease</li>
+              <li>Clinical sequencing data interpretation</li>
+              <li>Reproducible pipelines &amp; storage</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-bug"></i> Host–parasite interactions</h4>
+            <ul class="skill-list">
+              <li>Behavioural manipulation</li>
+              <li>Molecular mechanisms</li>
+              <li>Evolutionary dynamics</li>
+              <li>Insect–parasite systems</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-ribbon"></i> Oncology &amp; development</h4>
+            <ul class="skill-list">
+              <li>Functional cancer profiling</li>
+              <li>Molecular stratification</li>
+              <li>Developmental biology</li>
+              <li>Comparative model organisms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teaching and Mentorship -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-chalkboard-teacher"></i> Teaching &amp; mentorship</h2>
+
+        <div class="cv-list-item">
+          <span class="year">2024 — 2025</span>
+          <p class="body"><strong>Bioinformatics training</strong> at Harvard Medical School, Harvard T.H. Chan School of Public Health, and Harvard-affiliated hospitals.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2021</span>
+          <p class="body"><strong>Instructor, Genomics Data Carpentry</strong> · Genomics Aotearoa.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2021</span>
+          <p class="body"><strong>Instructor &amp; organiser, Research Bazaar 2021</strong> · Dunedin, New Zealand.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2021</span>
+          <p class="body"><strong>Instructor, RNA-seq Analysis Workshop</strong> · Genomics Aotearoa, Dunedin.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2019</span>
+          <p class="body"><strong>Tutor, Cell Biology (ANAT332)</strong> · Disability Information &amp; Support, University of Otago.</p>
+        </div>
+      </div>
+
+      <!-- Awards and Certifications -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-trophy"></i> Awards &amp; certifications</h2>
+
+        <div class="cv-list-item">
+          <span class="year">2021</span>
+          <p class="body"><strong>Travel grant</strong>, University of Otago — for attending the Hi-C workshop.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2020</span>
+          <p class="body"><strong>Certified Carpentries Instructor</strong> — international bioinformatics and data science training.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2019</span>
+          <p class="body"><strong>Departmental PhD Scholarship</strong>, University of Otago, New Zealand.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2014</span>
+          <p class="body"><strong>Distinguished International Student PhD Scholarship</strong>, Northwest A&amp;F University, China.</p>
+        </div>
+      </div>
+
+      <!-- Conference Presentations -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-microphone"></i> Selected conference presentations</h2>
+
+        <div class="cv-list-item">
+          <span class="year">2023</span>
+          <p class="body"><strong>Developing MUlti-Species Hemimetabolous Insect Tools (MUSH-IT).</strong> Enabling Discovery through GEnomics (EDGE) program annual meeting · NSF &amp; NIH · Alexandria, VA.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2023</span>
+          <p class="body"><strong>Decoding the molecular mechanisms of host manipulation by parasites.</strong> 98<sup>th</sup> Annual Meeting of the American Society of Parasitologists · Kansas City, USA.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2022</span>
+          <p class="body"><strong>A high-quality genome assembly, annotation, and analysis of the European earwig (<em>Forficula auricularia</em>) with low-coverage long-read sequencing.</strong> Entomological Society of America Annual Meeting · Vancouver, Canada.</p>
+        </div>
+        <div class="cv-list-item">
+          <span class="year">2021</span>
+          <p class="body"><strong>Insights into host manipulation by mind-altering parasites through whole-genome, transcriptome, and bisulfite sequencing.</strong> Genetics Society of AustralAsia (GSA) Conference.</p>
+        </div>
+      </div>
+
+      <!-- Selected Publications -->
+      <div class="cv-section">
+        <h2 class="section-title-cv"><i class="fas fa-book-open"></i> Selected publications</h2>
+
+        <div class="pub-row">
+          <span class="pub-year">2026</span>
+          <div>
+            <h3 class="pub-title">Chromosome-scale genome assembly and annotation of the two-spotted cricket Gryllus bimaculatus (Orthoptera: Gryllidae)</h3>
+            <p class="pub-meta">Kataoka K, Sanno R, Gaczorek T, <em>Bhattarai UR</em>, et al. · <em>G3 Genes | Genomes | Genetics</em>, 16(4), jkag036 · DOI: 10.1093/g3journal/jkag036</p>
+          </div>
+          <a href="https://doi.org/10.1093/g3journal/jkag036" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="pub-row">
+          <span class="pub-year">2026</span>
+          <div>
+            <h3 class="pub-title">Whole genome assembly and annotation of two invasive Sitona species</h3>
+            <p class="pub-meta">Katuwal M, <em>Bhattarai UR</em>, Phillips CB, Gemmell NJ, Dowle E · <em>Journal of Applied Entomology</em> · DOI: 10.1111/jen.70100</p>
+          </div>
+          <a href="https://doi.org/10.1111/jen.70100" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="pub-row">
+          <span class="pub-year">2025</span>
+          <div>
+            <h3 class="pub-title">Functional profiling of p53 and RB cell-cycle regulatory proficiency suggests mechanism-driven molecular stratification in endometrial carcinoma</h3>
+            <p class="pub-meta">Yang Z, Mogre S, Jun H, He R, Chaudhary SG, <em>Bhattarai UR</em>, et al. · <em>Cancer Research Communications</em> · PMID: 39932274 · DOI: 10.1158/2767-9764.CRC-24-0028</p>
+          </div>
+          <a href="https://doi.org/10.1158/2767-9764.CRC-24-0028" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="pub-row">
+          <span class="pub-year">2023</span>
+          <div>
+            <h3 class="pub-title">The proof is in the poo: Non-invasive method to detect endoparasitic infection</h3>
+            <p class="pub-meta">Doherty J-F §, <em>Bhattarai UR §</em>, Ferreira S, Poulin R, Gemmell NJ, Dowle EJ · <em>Molecular Ecology Resources</em> · DOI: 10.1111/1755-0998.13763</p>
+          </div>
+          <a href="https://doi.org/10.1111/1755-0998.13763" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="pub-row">
+          <span class="pub-year">2022</span>
+          <div>
+            <h3 class="pub-title">Genome assembly and annotation of the European earwig Forficula auricularia (subspecies B)</h3>
+            <p class="pub-meta"><em>Bhattarai UR</em>, Katuwal M, Poulin R, Gemmell NJ, Dowle E · <em>G3 Genes | Genomes | Genetics</em>, 12(10), jkac199 · DOI: 10.1093/g3journal/jkac199</p>
+          </div>
+          <a href="https://doi.org/10.1093/g3journal/jkac199" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="pub-row">
+          <span class="pub-year">2018</span>
+          <div>
+            <h3 class="pub-title">Phototransduction and circadian entrainment are the key signalling pathways in baculovirus-induced tree-top disease in lepidopteran larvae</h3>
+            <p class="pub-meta"><em>Bhattarai UR</em>, Li F, Katuwal M, Masoudi A, Wang D · <em>Scientific Reports</em>, 8(1) · DOI: 10.1038/s41598-018-35885-4</p>
+          </div>
+          <a href="https://doi.org/10.1038/s41598-018-35885-4" class="pub-link" target="_blank" rel="noopener" aria-label="Open DOI">
+            <i class="fas fa-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="../publications/publications.html" class="btn btn-ghost btn-sm">
+            See all publications <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
-      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational biology &amp; genomics</div>
+      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational research scientist</div>
       <div class="socials">
         <a href="https://github.com/upendrabhattarai" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
         <a href="https://twitter.com/Bhattarai_UR" title="Twitter / X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
