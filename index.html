@@ -12,6 +12,79 @@
   <link rel="canonical" href="https://upendrabhattarai.github.io">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="css/cover.css?v=20260503" rel="stylesheet">
+
+  <style>
+    /* Research projects (home page) */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .research-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.85rem 1.7rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .research-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: var(--border-strong);
+    }
+    .research-card .phase {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+    }
+    .research-card h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin: 0 0 0.4rem;
+      line-height: 1.3;
+    }
+    .research-card .institution {
+      display: block;
+      color: var(--text-soft);
+      font-size: 0.86rem;
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+    .research-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .research-card.ongoing {
+      border-left: 3px solid #10b981;
+    }
+    .research-card.ongoing .phase { color: #10b981; }
+    .research-card.ongoing .phase .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.55);
+      animation: pulse 2.4s infinite;
+      display: inline-block;
+    }
+    @media (max-width: 760px) {
+      .research-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -142,34 +215,82 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Research focus</span>
-        <h2 class="section-title">Where computational meets molecular</h2>
-        <p class="section-lede">
-          Four interconnected areas drive my current and past work — building references,
-          interpreting expression, decoding regulation, and asking how parasites rewire their hosts.
-        </p>
+        <h2 class="section-title">Selected projects</h2>
       </div>
 
-      <div class="focus-grid">
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-dna"></i></span>
-          <h4>Genomics</h4>
-          <p>De novo assembly, annotation, and comparative genomics for non-model and emerging model species.</p>
+      <div class="research-grid">
+
+        <article class="research-card">
+          <span class="phase">MSc · 2010 — 2012</span>
+          <h3>Fungal manipulation of host mite behaviour</h3>
+          <span class="institution">Norwegian University of Life Sciences · Norway</span>
+          <p>
+            Investigated three-trophic-level interactions between acaropathogenic fungi, mites, and plants.
+            Maintained pathogen and host cultures, ran lab experiments on host–pathogen dynamics, and
+            characterised how fungal infection alters host mite behaviour — building the wet-lab grounding
+            that anchors my later host–parasite work.
+          </p>
         </article>
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-chart-line"></i></span>
-          <h4>Transcriptomics</h4>
-          <p>Bulk &amp; single-cell RNA-seq for differential expression, splicing, and cell-state inference.</p>
+
+        <article class="research-card">
+          <span class="phase">PhD · 2014 — 2018</span>
+          <h3>Viral host manipulation in lepidoptera</h3>
+          <span class="institution">Northwest A&amp;F University · China</span>
+          <p>
+            Decoded the molecular mechanism by which baculoviruses manipulate lepidopteran hosts to climb
+            elevated positions before death. Through genome-wide transcriptomics and functional genomics,
+            identified phototransduction and circadian-entrainment pathways as the key signalling routes
+            driving baculovirus-induced tree-top disease (Bhattarai et al., <em>Scientific Reports</em>, 2018).
+          </p>
         </article>
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-layer-group"></i></span>
-          <h4>Epigenomics</h4>
-          <p>WGBS, ChIP/CUT&amp;RUN, and chromatin accessibility to map regulatory programs.</p>
+
+        <article class="research-card">
+          <span class="phase">PhD · 2019 — 2023</span>
+          <h3>Host–parasite molecular interactions</h3>
+          <span class="institution">University of Otago · New Zealand</span>
+          <p>
+            Combined integrative genomics, transcriptomics, and epigenetics to study host–parasite molecular
+            interactions. Assembled the first chromosome-level reference for the European earwig with
+            low-coverage long-read sequencing, and developed a non-invasive method to detect endoparasitic
+            infection from host fecal samples (Bhattarai et al. 2022, <em>G3</em>; Doherty &amp; Bhattarai 2023, <em>MER</em>).
+          </p>
         </article>
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-bug"></i></span>
-          <h4>Host–Parasite</h4>
-          <p>Integrative analyses of behavioral manipulation and host–parasite molecular interplay.</p>
+
+        <article class="research-card">
+          <span class="phase">Postdoc · 2022 — 2024</span>
+          <h3>Hemimetabolous insect genomics</h3>
+          <span class="institution">Extavour Lab · Harvard University</span>
+          <p>
+            Developed five hemimetabolous insect species as new genetic model organisms. Generated
+            chromosome-level genome assemblies and full annotations, then ran comparative genomics and
+            transcriptomics across temporal and spatial scales to map evolutionary patterns of gene
+            regulation (Kataoka et al. 2026, <em>G3</em> — <em>Gryllus bimaculatus</em>).
+          </p>
         </article>
+
+        <article class="research-card">
+          <span class="phase">Cancer genomics · 2024 — 2025</span>
+          <h3>Endometrial carcinoma molecular stratification</h3>
+          <span class="institution">Harvard Chan Bioinformatics Core · Collaboration</span>
+          <p>
+            Functional profiling of p53 and RB cell-cycle regulators across endometrial carcinoma. Contributed
+            mechanism-driven molecular stratification linking regulatory proficiency to phenotype, supporting
+            more rational therapy assignment (Yang et al., <em>Cancer Research Communications</em>, 2025).
+          </p>
+        </article>
+
+        <article class="research-card ongoing">
+          <span class="phase"><span class="pulse-dot"></span> Ongoing · 2025 —</span>
+          <h3>Neurodegenerative multi-omics</h3>
+          <span class="institution">Center for Translational Neuroscience · Brown University</span>
+          <p>
+            Leading bioinformatics strategy at the CTN for multi-omics studies of neurodegenerative disease.
+            Standardising scalable storage and high-throughput pipelines, mentoring graduate students on
+            rigorous reproducible analysis, and partnering with clinical and laboratory teams to translate
+            complex sequencing data into biologically meaningful insight.
+          </p>
+        </article>
+
       </div>
     </div>
   </section>
