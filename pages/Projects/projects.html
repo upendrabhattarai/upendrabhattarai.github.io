@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-  <meta name="description" content="Research areas of Upendra R. Bhattarai — genomics, transcriptomics, epigenomics, and host–parasite biology.">
+  <meta name="description" content="Research projects of Upendra R. Bhattarai — a journey from MSc to ongoing work at the Center for Translational Neuroscience, Brown University.">
   <meta name="author" content="Upendra Raj Bhattarai">
   <link rel="icon" href="../../assets/favicons/favicon.ico">
 
@@ -11,7 +11,7 @@
 
   <link rel="canonical" href="https://upendrabhattarai.github.io/pages/Projects/projects.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="../../css/cover.css?v=20260503" rel="stylesheet">
+  <link href="../../css/cover.css?v=20260503c" rel="stylesheet">
 </head>
 <body>
 
@@ -39,139 +39,130 @@
     <div class="bio-grid"></div>
     <div class="container">
       <span class="eyebrow">Research</span>
-      <h1>Where computational meets molecular</h1>
+      <h1>Projects across research stages</h1>
       <p class="lede">
-        I work at the intersection of multi-omics integration and molecular biology — applying genomics,
-        transcriptomics, and epigenomics to questions in neurodevelopmental disorders, oncology, developmental
-        biology, and host–parasite dynamics. My work combines short and long read sequencing, computational
-        rigor, and hands-on wet-lab experience to translate complex high-dimensional data into biological insight.
+        A walk through the questions I've worked on — from a master's project on fungal biocontrol of
+        spider mites in Norway, through two PhDs on host–parasite molecular interactions, a postdoc
+        building genomic resources for hemimetabolous insects at Harvard, bioinformatics consultation
+        across Harvard's schools and hospitals, and current multi-omics work on neurodegenerative
+        disease at Brown.
       </p>
     </div>
   </section>
 
-  <!-- Methods: topic cards with images -->
-  <section style="padding-top: 1rem;">
+  <!-- Research projects -->
+  <section style="padding-top: 1.5rem;">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Methods</span>
-        <h2 class="section-title">Computational &amp; experimental toolbox</h2>
-        <p class="section-lede">
-          The methods I keep coming back to — building references, profiling expression, mapping regulation, and asking how parasites rewire their hosts.
-        </p>
-      </div>
+      <div class="research-grid">
 
-      <div class="focus-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
-
-        <article class="focus-card" style="padding: 1.5rem;">
-          <img src="../../assets/images/genome_assembly.jpg" alt="Genomics" class="topic-image">
-          <span class="focus-icon"><i class="fas fa-dna"></i></span>
-          <h4>Genomics</h4>
-          <p>De novo genome assembly, annotation, and comparative genomics — leveraging short and long read sequencing (PacBio / Nanopore) to build high-quality references across diverse species.</p>
+        <article class="research-card">
+          <span class="phase">MSc · 2010 — 2012</span>
+          <h3>Fatal attraction: fungal biocontrol of spider mites</h3>
+          <span class="institution">Norwegian University of Life Sciences · Norway</span>
+          <p>
+            I worked with the two-spotted spider mite (<em>Tetranychus urticae</em>) — a globally
+            damaging crop pest of strawberries, vegetables, and greenhouse crops — and its specialist
+            fungal pathogen <em>Neozygites floridana</em>, a promising biological control agent.
+            We found that male mites are "fatally attracted" to female cadavers killed by the fungus,
+            approaching and even guarding them more readily than healthy living females, only
+            retreating once infective spores became visible. This sensory trap accelerates pathogen
+            transmission across mite populations — insight that helps growers in Norway and worldwide
+            deploy <em>N. floridana</em> as a more efficient, sustainable alternative to chemical
+            acaricides for biological control of spider mites
+            (Trandem, <em>Bhattarai</em> et al., <em>Journal of Invertebrate Pathology</em>, 2015).
+          </p>
         </article>
 
-        <article class="focus-card" style="padding: 1.5rem;">
-          <img src="../../assets/images/rna_seq.jpg" alt="Transcriptomics" class="topic-image">
-          <span class="focus-icon"><i class="fas fa-chart-line"></i></span>
-          <h4>Transcriptomics</h4>
-          <p>Bulk and single-cell RNA-seq for differential expression, alternative splicing, and cell-state inference — across temporal and spatial scales.</p>
+        <article class="research-card">
+          <span class="phase">PhD · 2014 — 2018</span>
+          <h3>Cracking the 130-year mystery of baculovirus tree-top disease</h3>
+          <span class="institution">Northwest A&amp;F University · China</span>
+          <p>
+            I worked with Asian gypsy moth larvae (<em>Lymantria dispar asiatica</em>) and their
+            pathogenic baculovirus LdMNPV — the cause of "tree-top disease," a long-standing
+            behavioural mystery in which infected caterpillars climb to elevated positions before death.
+            We delivered the first host-side molecular explanation: circadian entrainment and
+            phototransduction are the key signalling pathways during infection, the core clock genes
+            (<em>per</em>, <em>tim</em>) lose their normal day/night rhythm, and the larvae become
+            positively phototactic — actively climbing toward light. The work also produced the first
+            transcriptomic resource for the host response in this system. These findings now inform
+            field deployment of baculoviruses as biological pesticides against gypsy moth and
+            <em>Spodoptera</em> in forestry and agriculture, where photoperiod and timing materially
+            shape efficacy (Bhattarai et al., <em>Scientific Reports</em>, 2018).
+          </p>
         </article>
 
-        <article class="focus-card" style="padding: 1.5rem;">
-          <img src="../../assets/images/publication1.jpg" alt="Epigenomics" class="topic-image">
-          <span class="focus-icon"><i class="fas fa-layer-group"></i></span>
-          <h4>Epigenomics</h4>
-          <p>DNA methylation (WGBS) and chromatin profiling (ChIP-seq, CUT&amp;RUN, accessibility) to decode regulatory programs underlying biological complexity.</p>
+        <article class="research-card">
+          <span class="phase">PhD · 2019 — 2023</span>
+          <h3>A reference genome and an eDNA window into host–parasite biology</h3>
+          <span class="institution">University of Otago · New Zealand</span>
+          <p>
+            I worked with the European earwig (<em>Forficula auricularia</em>) and its mermithid
+            nematode parasites — a system famous for the bizarre suicidal water-seeking behaviour the
+            parasite drives in its host. We delivered the first chromosome-level reference genome for
+            the species (a 1.06 Gb hybrid Nanopore + 10x linked-read assembly — only the second whole
+            genome ever published across the entire Dermaptera order), resolved the New Zealand
+            population as subspecies B, and uncovered an unusually expanded repeatome (~65% of the
+            genome — nearly twice that of other hemimetabolous insects of similar size). We also
+            developed a non-invasive method that detects endoparasitic infection from host droppings
+            via environmental DNA, removing the need to dissect or sacrifice individuals. The genome
+            is now a public resource for research on maternal care, sociality, sexual selection, and
+            host–parasite interactions across dermapterans, and the eDNA approach is being adopted for
+            ecological parasite surveys and agricultural pest monitoring (Bhattarai et al. 2022, <em>G3</em>;
+            Doherty &amp; Bhattarai 2023, <em>MER</em>).
+          </p>
         </article>
 
-        <article class="focus-card" style="padding: 1.5rem;">
-          <img src="../../assets/images/host_manipulation.jpg" alt="Host–parasite" class="topic-image">
-          <span class="focus-icon"><i class="fas fa-bug"></i></span>
-          <h4>Host–parasite</h4>
-          <p>Integrative analyses to understand the molecular mechanisms of host behavioural manipulation and the evolutionary dynamics of parasite–host interactions.</p>
+        <article class="research-card">
+          <span class="phase">Postdoc · 2022 — 2024</span>
+          <h3>Building genomic resources for hemimetabolous insects</h3>
+          <span class="institution">Extavour Lab · Harvard University</span>
+          <p>
+            I worked with hemimetabolous insects in the Extavour Lab, focused on building the
+            genomic resources needed to develop them as new genetic model organisms. We generated
+            three chromosome-level genome assemblies and full annotations, together with matched
+            transcriptomic resources spanning developmental stages and tissues. These genomes are
+            now being used to dissect a wide range of biological questions in hemimetabolous
+            insects — from developmental biology and gene regulation to comparative evolution.
+            The first publications from this body of work have started to land (Kataoka et al. 2026,
+            <em>G3</em> — <em>Gryllus bimaculatus</em>) — stay tuned for more.
+          </p>
         </article>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Application areas -->
-  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Application areas</span>
-        <h2 class="section-title">Where the methods get applied</h2>
-        <p class="section-lede">
-          The biological questions I bring computational and experimental approaches to — both in current translational neuroscience work and across previous and ongoing collaborations.
-        </p>
-      </div>
-
-      <div class="focus-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
-
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-brain"></i></span>
-          <h4>Translational neuroscience</h4>
-          <p>Multi-omics integration for neurodegenerative disease research at the Center for Translational Neuroscience — supporting clinical and laboratory teams in turning sequencing data into biologically meaningful insight.</p>
+        <article class="research-card">
+          <span class="phase">Research Associate · 2024 — 2025</span>
+          <h3>Bioinformatics consultation, training &amp; mentoring at Harvard</h3>
+          <span class="institution">Harvard Chan Bioinformatics Core · Harvard T.H. Chan School of Public Health</span>
+          <p>
+            At the Harvard Chan Bioinformatics Core I worked with researchers from across Harvard's
+            schools, departments, and affiliated hospitals — training many students, postdocs, and
+            faculty on sequencing data analysis from foundational Bash and R skills through to
+            advanced multi-omics workflows, and mentoring project teams through their own bulk RNA-seq,
+            single-cell, and epigenomics analyses. Several of these collaborations have matured into
+            publications, including functional profiling of p53 and RB cell-cycle regulators in
+            endometrial carcinoma — contributing mechanism-driven molecular stratification linking
+            regulatory proficiency to phenotype (Yang et al., <em>Cancer Research Communications</em>, 2025).
+            More from this and other ongoing projects is on the way — stay tuned.
+          </p>
         </article>
 
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-ribbon"></i></span>
-          <h4>Oncology</h4>
-          <p>Functional profiling of cell-cycle regulators (e.g., p53 and RB) and mechanism-driven molecular stratification — collaborating on cancer genomics studies that connect phenotype to therapeutic strategy.</p>
+        <article class="research-card ongoing">
+          <span class="phase"><span class="pulse-dot"></span> Ongoing · 2025 —</span>
+          <h3>Multi-omics for neurodegenerative disease</h3>
+          <span class="institution">Center for Translational Neuroscience · Brown University</span>
+          <p>
+            At the Center for Translational Neuroscience I work with multi-omics datasets generated
+            by faculty- and student-led teams studying neurodegenerative disease — integrating bulk
+            and single-cell sequencing layers to dissect the molecular basis of these disorders.
+            I lead bioinformatics strategy across the centre, standardise scalable storage and
+            high-throughput analysis pipelines for portability and reproducibility, and mentor
+            graduate students through rigorous experimental design and analysis. The work bridges
+            clinical and laboratory teams, translating sequencing data into biologically meaningful
+            insight that supports translational medicine. Initial findings are being prepared for
+            publication — stay tuned.
+          </p>
         </article>
 
-        <article class="focus-card">
-          <span class="focus-icon"><i class="fas fa-seedling"></i></span>
-          <h4>Developmental biology</h4>
-          <p>Comparative genomics and transcriptomics of emerging model organisms — including chromosome-level assemblies for hemimetabolous insects to study temporal and spatial gene regulation.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Selected outputs -->
-  <section>
-    <div class="container">
-      <div class="section-head" style="margin-bottom: 1.75rem;">
-        <span class="eyebrow">Selected outputs</span>
-        <h2 class="section-title">Highlights from work to date</h2>
-      </div>
-
-      <div class="stats-strip">
-        <div class="stat">
-          <div class="stat-num">5+</div>
-          <div class="stat-label">Reference genomes</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">RNA / Epi datasets</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">17</div>
-          <div class="stat-label">Publications</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">Open</div>
-          <div class="stat-label">Reproducible workflows</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="padding-top: 1rem;">
-    <div class="container" style="text-align: center;">
-      <h2 class="section-title" style="margin-bottom: 0.85rem;">Interested in collaborating?</h2>
-      <p class="section-lede" style="margin: 0 auto 1.5rem;">
-        Always open to discussing genomics analyses, workflow development, and host–parasite questions.
-      </p>
-      <div style="display: inline-flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;">
-        <a href="mailto:upendrarajbhattarai@gmail.com" class="btn btn-primary">
-          <i class="fa-regular fa-envelope"></i> Reach out
-        </a>
-        <a href="../publications/publications.html" class="btn btn-ghost">
-          <i class="fas fa-book-open"></i> Read publications
-        </a>
       </div>
     </div>
   </section>
@@ -179,7 +170,7 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
-      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational biology &amp; genomics</div>
+      <div class="copyright">© 2026 Upendra R. Bhattarai · Computational research scientist</div>
       <div class="socials">
         <a href="https://github.com/upendrabhattarai" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
         <a href="https://twitter.com/Bhattarai_UR" title="Twitter / X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
